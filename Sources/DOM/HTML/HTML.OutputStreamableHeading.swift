@@ -11,8 +11,18 @@ extension HTML
     }
 }
 /// The name of this protocol is ``HTML.OutputStreamableHeading``.
-extension HTML.OutputStreamableHeading<String> where Self:CustomStringConvertible
+extension HTML.OutputStreamableHeading where Self:CustomStringConvertible
 {
     @inlinable public
     var display:String { self.description }
+}
+
+
+extension HTML.OutputStreamableHeading
+{
+    @inlinable public static
+    func += (hx:inout HTML.ContentEncoder, self:Self)
+    {
+        hx[.a] { $0.href = "#\(self.id)" } = self.display
+    }
 }

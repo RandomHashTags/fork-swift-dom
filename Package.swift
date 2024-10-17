@@ -7,7 +7,6 @@ let package:Package = .init(
     platforms: [.macOS(.v14), .iOS(.v13), .tvOS(.v13), .watchOS(.v6)],
     products: [
         .library(name: "DOM", targets: ["DOM"]),
-        .library(name: "HTML", targets: ["HTML"]),
 
         .library(name: "DynamicMemberFactoryMacro", targets: ["DynamicMemberFactoryMacro"]),
     ],
@@ -19,17 +18,9 @@ let package:Package = .init(
             name: "DOM",
             dependencies: [
                 "DynamicMemberFactoryMacro"
-            ],
-            exclude: [
-                "HTML/HTML.Attribute.swift",
-                "SVG/SVG.Attribute.swift",
             ]
         ),
-
-        .target(name: "HTML",
-            dependencies: [
-                "DOM"
-            ]),
+        //.executableTarget(name: "Snippets", dependencies: ["DOM"]),
 
         .target(name: "DynamicMemberFactoryMacro",
             dependencies: [

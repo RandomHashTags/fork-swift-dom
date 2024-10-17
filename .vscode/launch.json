@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:fork-swift-dom}",
+            "name": "Debug Snippets",
+            "program": "${workspaceFolder:fork-swift-dom}/.build/debug/Snippets",
+            "preLaunchTask": "swift: Build Debug Snippets"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:fork-swift-dom}",
+            "name": "Release Snippets",
+            "program": "${workspaceFolder:fork-swift-dom}/.build/release/Snippets",
+            "preLaunchTask": "swift: Build Release Snippets"
+        }
+    ]
+}

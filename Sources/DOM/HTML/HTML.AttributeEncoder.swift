@@ -1,4 +1,4 @@
-extension HTML
+public extension HTML
 {
     @dynamicMemberLookup
     @frozen public
@@ -14,7 +14,7 @@ extension HTML
         }
     }
 }
-extension HTML.AttributeEncoder
+public extension HTML.AttributeEncoder
 {
     /// Serializes an empty attribute, if the assigned boolean is true.
     /// Does nothing if it is false. The getter always returns false.
@@ -47,7 +47,7 @@ extension HTML.AttributeEncoder
         }
     }
 }
-extension HTML.AttributeEncoder
+public extension HTML.AttributeEncoder
 {
     /// Serializes a `data-` attribute with the given name suffix. The suffix should **not**
     /// include the `data-` prefix, and the encoder will not escape special characters in the
@@ -69,7 +69,7 @@ extension HTML.AttributeEncoder
     }
 }
 
-extension HTML.AttributeEncoder
+public extension HTML.AttributeEncoder
 {
     @inlinable public
     subscript(dynamicMember path:KeyPath<HTML.Attribute.Factory, HTML.Attribute>) -> Bool
@@ -93,6 +93,31 @@ extension HTML.AttributeEncoder
         set(text)
         {
             self[name: HTML.Attribute.Factory.init()[keyPath: path]] = text
+        }
+    }
+}
+
+
+
+public extension HTML.AttributeEncoder
+{
+    @inlinable public
+    var property:HTML.Attribute.Property?
+    {
+        get { nil }
+        set (value)
+        {
+            self[name: .property] = value?.rawValue
+        }
+    }
+
+    @inlinable public
+    var rel:HTML.Attribute.Rel?
+    {
+        get { nil }
+        set (value)
+        {
+            self[name: .rel] = value?.rawValue
         }
     }
 }

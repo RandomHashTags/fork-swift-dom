@@ -37,11 +37,20 @@ extension HTML.OutputStreamable
         html |= self
     }
 }
-extension HTML.OutputStreamable where Self:StringProtocol
+public extension HTML.OutputStreamable where Self:StringProtocol
 {
     @inlinable public static
     func += (html:inout HTML.ContentEncoder, self:Self)
     {
         html += self.utf8
     }
+}
+
+
+public extension HTML.OutputStreamable
+{
+    /// Calls ``+=(_:_:)`` as an instance method. This method only exists to allow encoding
+    /// existentials.
+    @inlinable
+    func encode(to html:inout HTML.ContentEncoder) { html += self }
 }

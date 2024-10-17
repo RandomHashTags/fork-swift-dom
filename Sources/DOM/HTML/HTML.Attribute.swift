@@ -1,6 +1,6 @@
 import DynamicMemberFactoryMacro
 
-extension HTML
+public extension HTML
 {
     @GenerateDynamicMemberFactory(excluding: "rel", "property")
     @frozen public
@@ -140,5 +140,84 @@ extension HTML
         /// A non-standard HTML attribute defined in [RDFa](https://en.wikipedia.org/wiki/RDFa)
         /// for use in the `<meta>` tag.
         case property
+    }
+}
+
+public extension HTML.Attribute
+{
+    /// See https://ogp.me/
+    @frozen public
+    enum Property:String, Equatable, Hashable, Sendable
+    {
+        case og_audio = "og:audio"
+        case og_audio_type = "og:audio:type"
+
+        case og_image = "og:image"
+        case og_image_alt = "og:image:alt"
+        case og_image_type = "og:image:type"
+        case og_image_width = "og:image:width"
+        case og_image_height = "og:image:height"
+
+        case og_video = "og:video"
+        case og_video_type = "og:video:type"
+        case og_video_width = "og:video:width"
+        case og_video_height = "og:video:height"
+
+        case og_description = "og:description"
+        case og_determiner = "og:determiner"
+        case og_locale = "og:locale"
+        case og_locale_alternate = "og:locale:alternate"
+        case og_site_name = "og:site_name"
+        case og_title = "og:title"
+        case og_type = "og:type"
+        case og_url = "og:url"
+    }
+}
+
+public extension HTML.Attribute
+{
+    /// https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel
+    @frozen public
+    enum Rel:String, Equatable, Hashable, Sendable
+    {
+        case alternate
+        case author
+        case bookmark
+        case canonical
+        case dnsPrefetch = "dns-prefetch"
+        case external
+        case help
+        case icon
+        case license
+        case manifest
+        case me
+        case modulepreload
+        case next
+        case nofollow
+        case noopener
+        case noreferrer
+        case opener
+        case pingback
+        case preconnect
+        case prefetch
+        case preload
+        case prerender
+        case prev
+        case search
+        case stylesheet
+        case tag
+
+        //  Unofficial extensions.
+        //  See: https://github.com/whatwg/html/issues/5367.
+        case google_sponsored = "sponsored"
+        case google_ugc = "ugc"
+    }
+}
+extension HTML.Attribute.Rel:CustomStringConvertible
+{
+    @inlinable public
+    var description:String
+    {
+        self.rawValue
     }
 }
