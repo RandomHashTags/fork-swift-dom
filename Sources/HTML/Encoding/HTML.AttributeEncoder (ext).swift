@@ -1,3 +1,5 @@
+import DOM
+
 extension HTML.AttributeEncoder
 {
     @inlinable public

@@ -1,3 +1,5 @@
+import DOM
+
 extension HTML
 {
     /// Encodes an HTML document with the provided closure, which includes the prefixed

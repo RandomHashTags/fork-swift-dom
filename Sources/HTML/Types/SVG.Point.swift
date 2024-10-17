@@ -6,6 +6,8 @@ import func Darwin.cos
 import func Darwin.sin
 #endif
 
+import DOM
+
 extension SVG
 {
     @frozen public

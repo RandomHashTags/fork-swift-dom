@@ -1,3 +1,5 @@
+import DOM
+
 extension HTML.OutputStreamable
 {
     /// Calls ``+=(_:_:)`` as an instance method. This method only exists to allow encoding

@@ -1,3 +1,5 @@
+import DOM
+
 extension Never:HTML.OutputStreamable
 {
     @inlinable public static

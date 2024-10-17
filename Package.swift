@@ -15,20 +15,20 @@ let package:Package = .init(
         .package(url: "https://github.com/apple/swift-syntax", "510.0.1" ..< "601.0.0"),
     ],
     targets: [
-        .target(name: "DOM",
+        .target(
+            name: "DOM",
             dependencies: [
-                // .target(name: "DynamicMemberFactoryMacro"),
+                "DynamicMemberFactoryMacro"
             ],
-            //  We are manually inlining the macro-generated code from these two files in order
-            //  to enable cross-compilation for this package, and also to improve build speeds.
             exclude: [
                 "HTML/HTML.Attribute.swift",
                 "SVG/SVG.Attribute.swift",
-            ]),
+            ]
+        ),
 
         .target(name: "HTML",
             dependencies: [
-                .target(name: "DOM"),
+                "DOM"
             ]),
 
         .target(name: "DynamicMemberFactoryMacro",

@@ -1,3 +1,5 @@
+import DOM
+
 extension HTML
 {
     /// A value-representation of the ``ContentEncoder/subscript(link:_:)`` encoding interface.

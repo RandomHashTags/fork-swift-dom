@@ -1,3 +1,5 @@
+import DOM
+
 extension HTML.OutputStreamableHeading
 {
     @inlinable public static

@@ -1,3 +1,4 @@
+import DOM
 import HTML
 //  snippet.EMBEDDED
 let html:HTML = .document

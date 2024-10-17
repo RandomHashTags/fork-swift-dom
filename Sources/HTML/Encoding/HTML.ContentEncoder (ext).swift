@@ -1,3 +1,5 @@
+import DOM
+
 extension HTML.ContentEncoder
 {
     /// Encodes **any** ``HTML.OutputStreamable`` value to this HTML stream.

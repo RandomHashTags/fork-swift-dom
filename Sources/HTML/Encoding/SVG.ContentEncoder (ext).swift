@@ -1,3 +1,5 @@
+import DOM
+
 extension SVG.ContentEncoder
 {
     @inlinable public

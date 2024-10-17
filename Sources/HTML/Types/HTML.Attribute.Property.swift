@@ -1,3 +1,5 @@
+import DOM
+
 extension HTML.Attribute
 {
     /// See https://ogp.me/

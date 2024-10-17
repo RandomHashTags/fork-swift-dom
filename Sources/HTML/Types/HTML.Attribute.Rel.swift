@@ -1,3 +1,5 @@
+import DOM
+
 extension HTML.Attribute
 {
     /// https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel

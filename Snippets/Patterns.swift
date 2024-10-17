@@ -1,3 +1,4 @@
+import DOM
 import HTML
 
 let assignment:HTML = .init

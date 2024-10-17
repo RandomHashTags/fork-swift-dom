@@ -1,3 +1,5 @@
+import DOM
+
 extension Optional where Wrapped:HTML.OutputStreamable
 {
     @inlinable public static

@@ -1,3 +1,5 @@
+import DOM
+
 extension SVG
 {
     /// Encodes an SVG document with the provided closure, which includes the prefixed

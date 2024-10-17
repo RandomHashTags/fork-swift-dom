@@ -1,3 +1,4 @@
+import DOM
 import HTML
 //  snippet.RESOURCE
 let svg:SVG = .document
